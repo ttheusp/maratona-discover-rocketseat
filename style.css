@@ -126,8 +126,6 @@ button:hover {
     background-color: var(--light-green);
 }
 
-/* BEGINNING */
-
 .transactionsManagement {
     display: flex;
     align-items: center;
@@ -194,7 +192,6 @@ button:hover {
 .filter-bg .filterIcon.filtered {
     background-image: url('./assets/filtered.svg');
 }
-/* ENDING */
 
 .button.cancel {
     color: var(--red);
