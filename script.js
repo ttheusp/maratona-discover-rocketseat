@@ -273,7 +273,7 @@ newTransactionButton.addEventListener('click', (e) => {
 
 filterButton.addEventListener('click', () => {
     const inputGroupFilter = document.querySelector('.filterManagement')
-    const isFiltered = Array.from(filterButton.querySelector('.filter-bg').classList).some(filterClass => filterClass == 'filtered')
+    const isFiltered = Array.from(filterButton.classList).some(filterClass => filterClass == 'filtered')
     if (isFiltered) {
         const initial = document.getElementById('initial')
         const final = document.getElementById('final')
