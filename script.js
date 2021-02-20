@@ -1,4 +1,5 @@
-const newTransactionButton = document.querySelector('.button.new')
+const newTransactionButton = document.querySelector('.newTransactionButton')
+const filterButton = document.querySelector('.filterButton')
 const modalOverlay = document.querySelector('.modal-overlay')
 const modalElement = document.querySelector('.modal')
 const form = document.querySelector('form')
@@ -266,8 +267,28 @@ const App = {
 
 App.init()
 
-newTransactionButton.addEventListener('click', () => {
+newTransactionButton.addEventListener('click', (e) => {
     toggleModal()
+})
+
+filterButton.addEventListener('click', () => {
+    const inputGroupFilter = document.querySelector('.filterManagement')
+    const isFiltered = Array.from(filterButton.querySelector('.filter-bg').classList).some(filterClass => filterClass == 'filtered')
+    if (isFiltered) {
+        const initial = document.getElementById('initial')
+        const final = document.getElementById('final')
+        initial.value = ''
+        final.value = ''
+        App.reload()
+    }
+    inputGroupFilter.classList.toggle('show')
+    filterButton.classList.toggle('filtered')
+    filterButton.querySelector('.filterIcon').classList.toggle('filtered') 
+    const filterManagement = document.querySelector('.filterManagement')
+    setTimeout(() => {
+        filterManagement.classList.toggle('none')
+    },200)
+    
 })
 
 form.addEventListener('submit', e => {
@@ -294,14 +315,6 @@ document.getElementById('final').addEventListener('change', e => {
     const final = document.getElementById('final')
     if(initial.value === '' && final.value === '') return 
     DOM.filterByDate(Utils.formatDate(initial.value), Utils.formatDate(final.value))
-})
-
-document.getElementById('removeFilterButton').addEventListener('click', e => {
-    const initial = document.getElementById('initial')
-    const final = document.getElementById('final')
-    initial.value = ''
-    final.value = ''
-    App.reload()
 })
 
 function toggleModal() {

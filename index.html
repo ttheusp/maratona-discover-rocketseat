@@ -44,26 +44,50 @@
         
         <!-- Transactions -->
         <section id="transaction">
-        <h2 class="sr-only">Transações</h2>
+            <h2 class="sr-only">Transações</h2>
         
-        <div class="input-group-filter">
-            <a href="#" class="button new">+ Nova Transação</a>
-            <input id="initial" type="date" placeholder="Data inicial">
-            <input id="final" type="date" placeholder="Data final">
-            <button id="removeFilterButton">Limpar filtros</button>
-        </div>
-        
-        <table id="data-table">
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                    <th>Data</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+            <!-- <a href="#" class="button new">+Nova Transação</a> -->
+            <div class="transactionsManagement">
+                <div class="newTransactionButton">
+                        <span>
+                            <img src="./assets/plus.svg" alt="Nova transação">
+                        </span>
+                        Nova transação
+                </div>
+                <div class="filterButton">
+                    <div class="filter-bg">
+                        <span class="filterIcon"></span>
+                    </div>
+                    Filtrar
+                </div>
+            </div>
+
+            <div class="filterManagement none">
+                <div class="input-group-filter">
+                    <div class="initialDate">
+                        Início
+                        <input id="initial" type="date" placeholder="Data inicial">
+                    </div>
+                    <div class="finalDate">
+                        Fim
+                        <input id="final" type="date" placeholder="Data final">
+                    </div>
+                    <div></div>
+                    <!-- <button id="removeFilterButton">Limpar filtros</button> -->
+                </div>
+            </div>
+            
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </section>
     </main>
 
